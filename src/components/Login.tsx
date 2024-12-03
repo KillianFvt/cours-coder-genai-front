@@ -3,6 +3,7 @@ import {loginUser} from "../services/loginUser";
 import {logoutUser} from "../services/logoutUser";
 import {useNavigate} from "react-router-dom";
 import {useUser} from "../providers/UserProvider";
+import './Login.css';
 
 const Login : React.FC = () => {
   const [email, setEmail] = useState("");
@@ -59,7 +60,7 @@ const Login : React.FC = () => {
 
   return (
       <div className={"login-block"}>
-        <h1>Connexion</h1>
+        <h2>Connexion</h2>
         <form action="/auth/Login" method={"post"} onSubmit={handleLogin} autoComplete="on">
           <label>
             <span>Email</span>

@@ -44,7 +44,7 @@ const Register: React.FC = () => {
 
   return (
     <div className={"register-block"}>
-      <h1>Register</h1>
+      <h2>Register</h2>
       <form onSubmit={handleRegister} autoComplete="on">
         <label>
           <span>Email</span>
