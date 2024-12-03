@@ -2,12 +2,20 @@ import React from 'react';
 import { Product } from '../types/Product';
 import './ProductComponent.css';
 import { useCart } from '../providers/CartProvider.tsx';
+import {useUser} from "../providers/UserProvider.tsx";
 
 export const ProductComponent: React.FC<{ product: Product }> = ({ product }) => {
     const { addItemToCart } = useCart();
+    const { reloadUser } = useUser();
 
     const handleClick = () => {
-        addItemToCart(product.id);
+        try {
+            addItemToCart(product.id);
+        } catch (error) {
+            console.log('Error adding item to cart', error);
+            reloadUser().then(() => addItemToCart(product.id));
+
+        }
     };
 
     return (
