@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+# Project Installation Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Prerequisites
 
-Currently, two official plugins are available:
+Ensure you have the following installed on your system:
+- Node.js (v17 or higher)
+- npm (v6 or higher)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation Steps
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/KillianFvt/cours-coder-genai-front.git
+   cd your-repo-name
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+3. **Run the development server:**
+   ```sh
+    npm start
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+4. **Run tests:**
+   ```sh
+   npm test
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Additional Scripts
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Build the project:**
+  ```sh
+   npm run build
+  ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Lint the project:**
+  ```sh
+   npm run lint
+  ```
+
+## Project Structure
+
+- `src/` - Source code
+- `tests` - Test files
+- `public/` - Public assets
+- `index.html` - Main HTML file
