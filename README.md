@@ -11,7 +11,7 @@ Ensure you have the following installed on your system:
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/KillianFvt/cours-coder-genai-front.git
-   cd your-repo-name
+   cd cours-coder-genai-front/
    ```
 
 2. **Install dependencies:**
