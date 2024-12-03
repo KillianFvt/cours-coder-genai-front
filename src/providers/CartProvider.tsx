@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { getCurrentCart } from '../services/getCurrentCart.ts';
 import { addToCart } from '../services/addToCart.ts';
 import { CartItem } from '../types/CartItem.ts';
+import {useUser} from "./UserProvider.tsx";
 
 interface CartContextType {
   totalItems: number;
@@ -15,6 +16,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [totalItems, setTotalItems] = useState<number>(0);
   const [items, setItems] = useState<CartItem[]>([]);
+  const { reloadUser } = useUser();
 
   const refreshCart = () => {
     getCurrentCart()
@@ -45,7 +47,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setItems(cart.items);
       })
       .catch(error => {
-        console.error('Failed to add item to cart:', error);
+        console.error('Failed to fetch cart:', error);
+        reloadUser().then(() => addItemToCart(id));
       });
   };
 

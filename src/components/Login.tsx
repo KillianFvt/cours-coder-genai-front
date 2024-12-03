@@ -4,6 +4,7 @@ import {logoutUser} from "../services/logoutUser";
 import {useNavigate} from "react-router-dom";
 import {useUser} from "../providers/UserProvider";
 import './Login.css';
+import {useCart} from "../providers/CartProvider.tsx";
 
 const Login : React.FC = () => {
   const [email, setEmail] = useState("");
@@ -16,6 +17,7 @@ const Login : React.FC = () => {
 
   const navigate = useNavigate();
   const { reloadUser } = useUser();
+  const { refreshCart } = useCart();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,6 +35,8 @@ const Login : React.FC = () => {
       localStorage.removeItem('token_expiration');
       await reloadUser();
       setLoading(false);
+
+      refreshCart();
 
       if (redirect.current) navigate(redirect.current);
       else navigate('/');

@@ -14,7 +14,6 @@ export const ProductComponent: React.FC<{ product: Product }> = ({ product }) =>
         } catch (error) {
             console.log('Error adding item to cart', error);
             reloadUser().then(() => addItemToCart(product.id));
-
         }
     };
 
