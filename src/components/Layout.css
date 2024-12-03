@@ -1,0 +1,70 @@
+nav {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  min-width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: calc(100% - 2rem); /* Set a maximum width for the navbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+nav li {
+  margin: 0 1rem; /* Add margin to separate menu items */
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+    align-items: center;
+  justify-content: center;
+}
+
+nav a:hover {
+  color: #646cff;
+}
+
+.user-section {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+main {
+  padding: 5rem 2rem 2rem; /* Add top padding to account for fixed navbar */
+  display: flex;
+  justify-content: center; /* Center the content */
+  width: 100%;
+}
+
+.layout-container {
+  max-width: 1200px; /* Set a maximum width for the main container */
+  width: 100%;
+}
+
+.cart-amt {
+  background-color: #646cff;
+  color: #ffffff;
+  padding: 0.5rem; /* Adjust padding for better alignment */
+  border-radius: 300px;
+  font-size: 0.8rem;
+  display: inline-flex; /* Use inline-flex to align with text */
+  justify-content: center;
+  align-items: center;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-left: 0.5rem; /* Add margin to separate from text */
+}

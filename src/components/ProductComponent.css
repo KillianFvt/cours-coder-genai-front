@@ -1,0 +1,35 @@
+.product-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.product-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-desc {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: green;
+    margin-bottom: 10px;
+}
+
+.product-stock {
+    font-size: 1rem;
+    color: red;
+}
